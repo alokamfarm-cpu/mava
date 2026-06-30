@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everbuild 07 LTD | Construction & Consultancy</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background: #f4f7fc;
+      color: #1e2b3c;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / nav */
+    .top-bar {
+      background: #0b1a2b;
+      color: #fff;
+      padding: 12px 0;
+      font-size: 0.95rem;
+      border-bottom: 3px solid #d4a843;
+    }
+
+    .top-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar a {
+      color: #f0e6d0;
+      text-decoration: none;
+      margin: 0 10px 0 0;
+    }
+
+    .top-bar a:hover {
+      color: #d4a843;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand i {
+      color: #d4a843;
+      font-size: 1.8rem;
+    }
+
+    .brand h1 {
+      font-weight: 600;
+      font-size: 1.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .brand span {
+      font-weight: 300;
+      color: #b0c7db;
+    }
+
+    .company-badge {
+      background: #1e3a5a;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      border-left: 2px solid #d4a843;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(135deg, #0b1a2b 0%, #1e3a5a 100%);
+      color: white;
+      padding: 60px 0 50px;
+      text-align: center;
+      border-bottom: 6px solid #d4a843;
+    }
+
+    .hero h2 {
+      font-size: 3.2rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 strong {
+      font-weight: 600;
+      color: #d4a843;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 12px auto 20px;
+      opacity: 0.9;
+    }
+
+    .hero .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 28px;
+      font-size: 1rem;
+    }
+
+    .badge-row i {
+      color: #d4a843;
+      margin-right: 8px;
+    }
+
+    .badge-row span {
+      background: rgba(255,255,255,0.07);
+      padding: 6px 18px;
+      border-radius: 40px;
+      border: 1px solid rgba(212,168,67,0.3);
+    }
+
+    /* sections */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 16px;
+      color: #0b1a2b;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title i {
+      color: #d4a843;
+      font-size: 2rem;
+    }
+
+    .section-sub {
+      color: #2c4058;
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      border-left: 4px solid #d4a843;
+      padding-left: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      transition: 0.2s;
+      border: 1px solid #edf2f7;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.07);
+      border-color: #d4a843;
+    }
+
+    .card i {
+      font-size: 2.4rem;
+      color: #d4a843;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #2d4058;
+    }
+
+    .highlight-box {
+      background: #0b1a2b;
+      color: white;
+      padding: 28px 32px;
+      border-radius: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0 10px;
+    }
+
+    .highlight-box .big {
+      font-size: 2rem;
+      font-weight: 300;
+    }
+
+    .highlight-box .big strong {
+      color: #d4a843;
+      font-weight: 600;
+    }
+
+    .pill {
+      background: #1e3a5a;
+      padding: 6px 18px;
+      border-radius: 40px;
+      color: #d4a843;
+      font-weight: 500;
+    }
+
+    .reg-details {
+      background: #edf4fa;
+      padding: 28px 30px;
+      border-radius: 20px;
+      border-left: 6px solid #d4a843;
+      margin: 20px 0;
+    }
+
+    .reg-details ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 10px 20px;
+      margin-top: 12px;
+    }
+
+    .reg-details li i {
+      color: #d4a843;
+      width: 24px;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      border: 1px solid #dce5ed;
+      margin-top: 20px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-row .info {
+      flex: 2;
+      min-width: 220px;
+    }
+
+    .contact-row .info i {
+      width: 32px;
+      color: #d4a843;
+    }
+
+    .director-tag {
+      background: #0b1a2b;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 60px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .director-tag i {
+      color: #d4a843;
+      margin-right: 10px;
+    }
+
+    footer {
+      background: #0b1a2b;
+      color: #b0c7db;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.95rem;
+      border-top: 4px solid #d4a843;
+    }
+
+    footer a {
+      color: #d4a843;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .hero h2 { font-size: 2.2rem; }
+      .top-bar .container { flex-direction: column; gap: 6px; }
+      .brand h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="brand">
+        <i class="fas fa-hard-hat"></i>
+        <h1>EVERBUILD <span>07 LTD</span></h1>
+      </div>
+      <div>
+        <a href="mailto:contact@everbuild07ltd.com"><i class="fas fa-envelope"></i> contact@everbuild07ltd.com</a>
+        <span style="margin:0 8px; color:#4a6a8a;">|</span>
+        <a href="tel:+447774462746"><i class="fas fa-phone-alt"></i> 07774 462746</a>
+        <span class="company-badge" style="margin-left: 16px;"><i class="fas fa-check-circle" style="color:#d4a843;"></i> Company No. SC923456</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="container">
+      <h2>Built on integrity, <strong>driven by results.</strong></h2>
+      <p>A trusted Scottish private limited company committed to delivering professional excellence across construction, project management, and business consultancy.</p>
+      <div class="badge-row">
+        <span><i class="fas fa-building"></i> Registered in Scotland</span>
+        <span><i class="fas fa-user-check"></i> Director: Sai Raman Kathi</span>
+        <span><i class="fas fa-check-circle"></i> Active · Companies House</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About / registration -->
+  <section>
+    <div class="container">
+      <div class="section-title"><i class="fas fa-info-circle"></i> About Everbuild 07 LTD</div>
+      <p style="font-size:1.1rem; max-width: 800px; margin-bottom: 20px;">Everbuild 07 LTD is a Scottish private limited company incorporated and registered with Companies House under number <strong>SC923456</strong>. Headquartered in Edinburgh, we are a professionally governed organisation operating across construction, project management, and business consultancy.</p>
+      <div class="reg-details">
+        <div style="display: flex; flex-wrap: wrap; gap: 16px 30px;">
+          <div><i class="fas fa-hashtag" style="color:#d4a843;"></i> <strong>Company No.</strong> SC923456</div>
+          <div><i class="fas fa-users"></i> <strong>Type</strong> Private Limited by Shares</div>
+          <div><i class="fas fa-map-pin"></i> <strong>Jurisdiction</strong> Scotland, UK</div>
+          <div><i class="fas fa-flag"></i> <strong>Status</strong> Active</div>
+          <div><i class="fas fa-home"></i> <strong>Registered Office</strong> 18/4 Springwell Place, Edinburgh, EH11 2HY</div>
+        </div>
+        <hr style="margin: 20px 0; border-color: #cbd8e6;">
+        <ul>
+          <li><i class="fas fa-check"></i> Legally incorporated under the Companies Act 2006 in Scotland.</li>
+          <li><i class="fas fa-check"></i> Separate legal entity — assets and liabilities distinct from directors.</li>
+          <li><i class="fas fa-check"></i> Annual accounts & confirmation statements filed with Companies House.</li>
+          <li><i class="fas fa-check"></i> Subject to UK HMRC regulation for corporation tax & VAT.</li>
+          <li><i class="fas fa-check"></i> Fully searchable on the public Companies House register.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construction -->
+  <section>
+    <div class="container">
+      <div class="section-title"><i class="fas fa-hard-hat"></i> Construction</div>
+      <p class="section-sub">Delivering quality builds from the ground up — residential, commercial, and refurbishment projects across Scotland and the UK.</p>
+      <div class="grid-3">
+        <div class="card"><i class="fas fa-house-chimney"></i><h3>Residential Builds</h3><p>New-build houses and apartments designed to the highest standards, from foundations to final finishes.</p></div>
+        <div class="card"><i class="fas fa-warehouse"></i><h3>Commercial Construction</h3><p>Office blocks, retail units, and industrial facilities constructed with precision, on time and within budget.</p></div>
+        <div class="card"><i class="fas fa-tools"></i><h3>Refurbishments & Fit-Outs</h3><p>Breathing new life into existing structures — interior fit-outs, structural upgrades, and full refurbishment programmes.</p></div>
+      </div>
+      <div class="highlight-box">
+        <span class="big"><i class="fas fa-shield-alt" style="color:#d4a843; margin-right: 12px;"></i> <strong>CDM 2015 Compliant</strong> · Health & Safety · Director-Led Delivery</span>
+        <span class="pill"><i class="fas fa-map-marker-alt"></i> Scotland & UK-Wide</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section>
+    <div class="container">
+      <div class="section-title"><i class="fas fa-cogs"></i> What We Offer</div>
+      <p class="section-sub">Services built for modern business — from construction management to compliance and procurement.</p>
+      <div class="grid-2">
+        <div class="card"><i class="fas fa-helmet-safety"></i><h3>Construction Management</h3><p>Full lifecycle management — from planning applications and procurement through to practical completion and handover.</p></div>
+        <div class="card"><i class="fas fa-building"></i><h3>Residential & Commercial Builds</h3><p>New-build properties and commercial developments, delivered to specification, on budget and on schedule.</p></div>
+        <div class="card"><i class="fas fa-paint-roller"></i><h3>Refurbishment & Fit-Out</h3><p>Structural refurbishments, interior fit-outs, and modernisation projects for domestic and commercial clients.</p></div>
+        <div class="card"><i class="fas fa-chart-line"></i><h3>Business Consulting</h3><p>Strategic advisory tailored to your goals — from business planning and market analysis to operational improvements.</p></div>
+        <div class="card"><i class="fas fa-gavel"></i><h3>Compliance & Governance</h3><p>Navigating regulatory requirements, building regulations, CDM compliance, and corporate statutory obligations.</p></div>
+        <div class="card"><i class="fas fa-truck-fast"></i><h3>Procurement & Supply</h3><p>Identifying reliable suppliers, negotiating favourable terms, and streamlining your construction supply chain.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section style="background: #f0f5fb;">
+    <div class="container">
+      <div class="section-title"><i class="fas fa-star"></i> Why Choose Us</div>
+      <div class="grid-2" style="margin-top: 10px;">
+        <div><i class="fas fa-check-circle" style="color:#d4a843; width:28px;"></i> Registered and compliant with UK Companies House (SC923456)</div>
+        <div><i class="fas fa-check-circle" style="color:#d4a843; width:28px;"></i> CDM 2015 health & safety compliant on all construction sites</div>
+        <div><i class="fas fa-check-circle" style="color:#d4a843; width:28px;"></i> Edinburgh-based with nationwide construction & business reach</div>
+        <div><i class="fas fa-check-circle" style="color:#d4a843; width:28px;"></i> Transparent communication and reporting at every stage</div>
+        <div><i class="fas fa-check-circle" style="color:#d4a843; width:28px;"></i> Director-led, hands-on engagement on every project</div>
+        <div><i class="fas fa-check-circle" style="color:#d4a843; width:28px;"></i> Committed to quality builds, on time and within budget</div>
+        <div><i class="fas fa-check-circle" style="color:#d4a843; width:28px;"></i> Skilled tradespeople and vetted subcontractor network</div>
+        <div><i class="fas fa-check-circle" style="color:#d4a843; width:28px;"></i> Built on trust, integrity, and full accountability</div>
+      </div>
+      <div style="margin-top: 28px; background: #0b1a2b; color:white; padding: 16px 28px; border-radius: 60px; display: inline-block;">
+        <i class="fas fa-check-circle" style="color:#d4a843;"></i> Company No. SC923456 · Private Limited · Director: Sai Raman Kathi · Active ✓
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <div class="container">
+      <div class="section-title"><i class="fas fa-phone-alt"></i> Get In Touch</div>
+      <p class="section-sub">Ready to work together? Let's talk.</p>
+      <div class="contact-card">
+        <div class="contact-row">
+          <div class="info">
+            <p><i class="fas fa-map-pin"></i> <strong>Registered Office</strong><br>18/4 Springwell Place, Edinburgh, EH11 2HY, Scotland, UK</p>
+            <p style="margin-top: 18px;"><i class="fas fa-phone"></i> <strong>Phone</strong><br><a href="tel:+447774462746" style="color:#0b1a2b; text-decoration:none;">07774 462746</a></p>
+            <p><i class="fas fa-envelope"></i> <strong>Email</strong><br><a href="mailto:contact@everbuild07ltd.com" style="color:#0b1a2b; text-decoration:none;">contact@everbuild07ltd.com</a></p>
+          </div>
+          <div style="flex:1; min-width: 200px; background:#edf4fa; padding: 22px 24px; border-radius: 20px;">
+            <div class="director-tag"><i class="fas fa-user-tie"></i> Director: Sai Raman Kathi</div>
+            <p style="margin-top: 14px; font-weight:500;">Direct line: <a href="tel:+447774462746" style="color:#0b1a2b;">07774 462746</a></p>
+            <p style="font-size:0.95rem; color:#1e3a5a;"><i class="fas fa-clock"></i> Enquire about our services — call or send a message and we'll get back promptly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p><strong>EVERBUILD 07 LTD</strong> · Registered in Scotland · Company No. SC923456</p>
+      <p style="margin-top: 8px;">© 2026 Everbuild 07 LTD. All rights reserved. | <a href="mailto:contact@everbuild07ltd.com">contact@everbuild07ltd.com</a> | <i class="fas fa-phone"></i> 07774 462746</p>
+      <p style="font-size:0.85rem; margin-top: 10px; opacity:0.7;">Director: Sai Raman Kathi · 18/4 Springwell Place, Edinburgh, EH11 2HY</p>
+    </div>
+  </footer>
+</body>
+</html>
